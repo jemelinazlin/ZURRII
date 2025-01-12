@@ -96,6 +96,7 @@ const Home = () => {
             <div className="text-white text-5xl font-extrabold bg-black bg-opacity-50 px-6 py-4 rounded-lg shadow-md">
               Welcome To Zuri Trends
             </div>
+            
           </div>
         </div>
 
