@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import CategoryCard from '../components/CategoryCard';
+import { useCart } from '../Context/Cartcontext'; 
 
 const CatalogJackets = () => {
-  // Sample data for categories of jackets
+  const { cart, wishlist, addToCart, addToWishlist } = useCart();
   const categories = [
     {
       category: 'Leather Jackets',
@@ -61,32 +62,8 @@ const CatalogJackets = () => {
     },
   ];
 
-  // State to manage the cart and wishlist
-  const [cart, setCart] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
-  const [currentImageIndices, setCurrentImageIndices] = useState(categories.map(() => 0)); // Track current image index for each category
 
-  // Load cart and wishlist from localStorage on mount
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    setCart(storedCart);
-    setWishlist(storedWishlist);
-  }, []);
-
-  // Function to add jacket to cart
-  const addToCart = (jacket) => {
-    const updatedCart = [...cart, jacket];
-    setCart(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart)); // Persist to localStorage
-  };
-
-  // Function to add jacket to wishlist
-  const addToWishlist = (jacket) => {
-    const updatedWishlist = [...wishlist, jacket];
-    setWishlist(updatedWishlist);
-    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); // Persist to localStorage
-  };
+  const [currentImageIndices, setCurrentImageIndices] = useState(categories.map(() => 0));
 
   // Function to handle the next image
   const nextImage = (categoryIndex) => {
@@ -103,12 +80,12 @@ const CatalogJackets = () => {
   };
 
   return (
-    <div className="bg-gray-50 p-6">
-      <h3 className="text-3xl font-semibold text-center mb-8">Jackets Catalog</h3>
+    <div className="bg-gray-50 dark:bg-gray-900 p-6">
+      <h3 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-8">Jackets Catalog</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
         {categories.map((category, index) => (
           <div key={index} className="w-full">
-            <h4 className="text-2xl font-semibold text-center mb-4">{category.category}</h4>
+            <h4 className="text-2xl font-semibold text-center text-gray-800 dark:text-white mb-4">{category.category}</h4>
 
             {/* Image carousel */}
             <div className="relative">
@@ -118,18 +95,18 @@ const CatalogJackets = () => {
                 className="w-full h-80 object-cover mb-4"
               />
               <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2">
-                <button onClick={() => prevImage(index)} className="bg-gray-800 text-white p-2 rounded-full">
+                <button onClick={() => prevImage(index)} className="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none">
                   &#8249;
                 </button>
               </div>
               <div className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2">
-                <button onClick={() => nextImage(index)} className="bg-gray-800 text-white p-2 rounded-full">
+                <button onClick={() => nextImage(index)} className="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none">
                   &#8250;
                 </button>
               </div>
             </div>
 
-            {/* List of jackets */}
+            {/* List of pants items */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {category.jackets.map((jacket, jacketIndex) => (
                 <CategoryCard
@@ -138,8 +115,8 @@ const CatalogJackets = () => {
                   image={jacket.image}
                   title={jacket.title}
                   price={jacket.price}
-                  onAddToCart={() => addToCart(jacket)}
-                  onAddToWishlist={() => addToWishlist(jacket)}
+                  onAddToCart={() => addToCart(jacket)} // Add to cart using CartContext
+                  onAddToWishlist={() => addToWishlist(jacket)} // Add to wishlist using CartContext
                 />
               ))}
             </div>

@@ -18,8 +18,8 @@ function Cart() {
 
   // Calculate total price
   const totalPrice = cartItems.reduce((total, item) => {
-    const price = item.price ? item.price.replace('KSh ', '').replace(',', '') : '0';  // Ensure price is a valid string
-    return total + parseFloat(price);
+    const price = parseFloat(item?.price?.replace('KSh ', '').replace(',', '')) || 0;
+    return total + price;
   }, 0);
 
   return (
@@ -35,7 +35,7 @@ function Cart() {
                 <img src={item.image} alt={item.title} className="w-20 h-20 object-cover rounded" />
                 <div>
                   <h4 className="text-lg font-semibold">{item.title}</h4>
-                  <p className="text-gray-500">{item.price}</p>
+                  <p className="text-gray-500">{item.price || 'Price not available'}</p>
                 </div>
               </div>
               <button

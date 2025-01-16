@@ -1,8 +1,7 @@
 // src/pages/CatalogPage.jsx
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import CategoryCard from '../components/CategoryCard';
+import { useCart } from '../Context/Cartcontext'; // Import the useCart hook
 import CatalogDresses from '../components/Dresses'; 
 import CatalogPants from '../components/Pants';  
 import CatalogShirts from '../components/Shirts';  
@@ -10,6 +9,7 @@ import CatalogJackets from '../components/Jackets';
 
 const CatalogPage = () => {
   const { category } = useParams(); 
+  const { cart, wishlist, addToCart, addToWishlist } = useCart(); // Access cart context
 
   return (
     <div className="catalog-page">

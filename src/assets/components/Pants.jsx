@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CategoryCard from '../components/CategoryCard';
+import { useCart } from '../Context/Cartcontext'; 
 
 const CatalogPants = () => {
-  // Sample data for categories of pants
+  const { cart, wishlist, addToCart, addToWishlist } = useCart(); // Access cart context
+
   const categories = [
     {
       category: 'Slim Fit Pants',
@@ -55,41 +57,15 @@ const CatalogPants = () => {
     // More categories...
   ];
 
-  // State to manage the cart and wishlist
-  const [cart, setCart] = useState([]);
-  const [wishlist, setWishlist] = useState([]);
-  const [currentImageIndices, setCurrentImageIndices] = useState(categories.map(() => 0)); // Track current image index for each category
 
-  // Load cart and wishlist from localStorage on mount
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    setCart(storedCart);
-    setWishlist(storedWishlist);
-  }, []);
+  const [currentImageIndices, setCurrentImageIndices] = useState(categories.map(() => 0));
 
-  // Function to add item to cart
-  const addToCart = (pant) => {
-    const updatedCart = [...cart, pant];
-    setCart(updatedCart);
-    localStorage.setItem('cart', JSON.stringify(updatedCart)); // Persist to localStorage
-  };
-
-  // Function to add item to wishlist
-  const addToWishlist = (pant) => {
-    const updatedWishlist = [...wishlist, pant];
-    setWishlist(updatedWishlist);
-    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); // Persist to localStorage
-  };
-
-  // Function to handle the next image
   const nextImage = (categoryIndex) => {
     const updatedIndices = [...currentImageIndices];
     updatedIndices[categoryIndex] = (updatedIndices[categoryIndex] + 1) % categories[categoryIndex].pants.length;
     setCurrentImageIndices(updatedIndices);
   };
 
-  // Function to handle the previous image
   const prevImage = (categoryIndex) => {
     const updatedIndices = [...currentImageIndices];
     updatedIndices[categoryIndex] = (updatedIndices[categoryIndex] - 1 + categories[categoryIndex].pants.length) % categories[categoryIndex].pants.length;
@@ -97,12 +73,12 @@ const CatalogPants = () => {
   };
 
   return (
-    <div className="bg-gray-50 p-6">
-      <h3 className="text-3xl font-semibold text-center mb-8">Pants Catalog</h3>
+    <div className="bg-gray-50 dark:bg-gray-900 p-6">
+      <h3 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-8">Pants Catalog</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
         {categories.map((category, index) => (
           <div key={index} className="w-full">
-            <h4 className="text-2xl font-semibold text-center mb-4">{category.category}</h4>
+            <h4 className="text-2xl font-semibold text-center text-gray-800 dark:text-white mb-4">{category.category}</h4>
 
             {/* Image carousel */}
             <div className="relative">
@@ -112,12 +88,12 @@ const CatalogPants = () => {
                 className="w-full h-80 object-cover mb-4"
               />
               <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2">
-                <button onClick={() => prevImage(index)} className="bg-gray-800 text-white p-2 rounded-full">
+                <button onClick={() => prevImage(index)} className="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none">
                   &#8249;
                 </button>
               </div>
               <div className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2">
-                <button onClick={() => nextImage(index)} className="bg-gray-800 text-white p-2 rounded-full">
+                <button onClick={() => nextImage(index)} className="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none">
                   &#8250;
                 </button>
               </div>

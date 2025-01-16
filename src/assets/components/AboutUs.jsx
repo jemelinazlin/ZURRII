@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
       {/* Hero Section */}
       <div className="relative w-full h-[500px] mb-16 overflow-hidden rounded-lg shadow-lg">
         <img
@@ -29,10 +29,10 @@ const About = () => {
       </div>
 
       {/* About Us Section */}
-      <section id="about-us" className="py-16 px-6 lg:px-24 bg-white shadow-md rounded-lg mb-16">
+      <section id="about-us" className="py-16 px-6 lg:px-24 bg-white dark:bg-gray-800 shadow-md rounded-lg mb-16">
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Our Story</h2>
-          <p className="text-lg text-gray-500">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Our Story</h2>
+          <p className="text-lg text-gray-500 dark:text-gray-300">
             At Zuri Trends, we believe that fashion is more than just clothing — it’s about self-expression, confidence, and quality. Founded with the mission of bringing the latest trends to your wardrobe at affordable prices, our journey has been one of passion, dedication, and customer-first focus.
           </p>
         </div>
@@ -40,16 +40,16 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Mission */}
           <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h3>
-            <p className="text-lg text-gray-600">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our Mission</h3>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Our mission is to provide high-quality, trendy, and stylish clothing for men and women, while offering a seamless shopping experience. We aim to empower our customers to feel confident and beautiful in every outfit they choose from our collection. We are committed to sustainability, ethical sourcing, and delivering exceptional customer service.
             </p>
           </div>
 
           {/* Vision */}
           <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Our Vision</h3>
-            <p className="text-lg text-gray-600">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Our Vision</h3>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Our vision is to become a global fashion destination, offering clothing that fits every occasion, lifestyle, and personality. We aspire to create a community where people from all walks of life can shop with ease, find their perfect style, and make a positive impact through sustainable practices.
             </p>
           </div>
@@ -57,10 +57,10 @@ const About = () => {
       </section>
 
       {/* Our Team Section */}
-      <section className="bg-blue-50 py-16">
+      <section className="bg-blue-50 dark:bg-blue-900 py-16">
         <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Meet Our Team</h2>
-          <p className="text-lg text-gray-500">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Meet Our Team</h2>
+          <p className="text-lg text-gray-500 dark:text-gray-300">
             The heart of Zuri Trends lies in the passionate and dedicated team behind the scenes. From our fashion designers to our customer service team, we’re all here to make your shopping experience extraordinary.
           </p>
         </div>
@@ -73,9 +73,9 @@ const About = () => {
               alt="Team Member 1"
               className="w-[150px] h-[150px] rounded-full mx-auto mb-4 border-4 border-blue-500 shadow-xl transform transition-transform duration-300 hover:scale-110"
             />
-            <h5 className="font-semibold text-gray-800">Muslim Kigen</h5>
-            <p className="text-gray-600">Founder & CEO</p>
-            <p className="text-gray-500">Kigens’s vision for Tisap Threads has shaped the brand into what it is today. She has a keen eye for trends and a passion for providing high-quality, stylish apparel for everyone.</p>
+            <h5 className="font-semibold text-gray-800 dark:text-white">Muslim Kigen</h5>
+            <p className="text-gray-600 dark:text-gray-300">Founder & CEO</p>
+            <p className="text-gray-500 dark:text-gray-400">Kigens’s vision for Tisap Threads has shaped the brand into what it is today. She has a keen eye for trends and a passion for providing high-quality, stylish apparel for everyone.</p>
           </div>
 
           {/* Team Member 2 */}
@@ -85,40 +85,40 @@ const About = () => {
               alt="Team Member 2"
               className="w-[150px] h-[150px] rounded-full mx-auto mb-4 border-4 border-blue-500 shadow-xl transform transition-transform duration-300 hover:scale-110"
             />
-            <h5 className="font-semibold text-gray-800">Nazlin Jemeli</h5>
-            <p className="text-gray-600">Head of Design</p>
-            <p className="text-gray-500">Jemli's brings a creative touch to everything we do. His designs reflect both timeless elegance and contemporary style, ensuring our collection always stays fresh and exciting.</p>
+            <h5 className="font-semibold text-gray-800 dark:text-white">Nazlin Jemeli</h5>
+            <p className="text-gray-600 dark:text-gray-300">Head of Design</p>
+            <p className="text-gray-500 dark:text-gray-400">Jemli's brings a creative touch to everything we do. His designs reflect both timeless elegance and contemporary style, ensuring our collection always stays fresh and exciting.</p>
           </div>
         </div>
       </section>
 
       {/* Our Values Section */}
-      <section className="py-16 px-6 lg:px-24 bg-white shadow-lg rounded-lg mb-16">
+      <section className="py-16 px-6 lg:px-24 bg-white dark:bg-gray-800 shadow-lg rounded-lg mb-16">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">Our Values</h2>
-          <p className="text-lg text-gray-500">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Our Values</h2>
+          <p className="text-lg text-gray-500 dark:text-gray-300">
             At Tisap Threads, our values define who we are and how we interact with our customers, partners, and the world.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center">
-          <div className="p-6 bg-white shadow-lg rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-blue-50">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Sustainability</h3>
-            <p className="text-gray-600">
+          <div className="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-blue-50 dark:hover:bg-blue-900">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">Sustainability</h3>
+            <p className="text-gray-600 dark:text-gray-300">
               We are committed to reducing our environmental impact by sourcing sustainable materials and practicing ethical production methods.
             </p>
           </div>
 
-          <div className="p-6 bg-white shadow-lg rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-blue-50">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Quality</h3>
-            <p className="text-gray-600">
+          <div className="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-blue-50 dark:hover:bg-blue-900">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">Quality</h3>
+            <p className="text-gray-600 dark:text-gray-300">
               Quality is at the core of everything we do. From fabric selection to stitching, every piece in our collection is designed to last.
             </p>
           </div>
 
-          <div className="p-6 bg-white shadow-lg rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-blue-50">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Customer-Centric</h3>
-            <p className="text-gray-600">
+          <div className="p-6 bg-white dark:bg-gray-700 shadow-lg rounded-lg text-center transform transition-all duration-300 hover:scale-105 hover:bg-blue-50 dark:hover:bg-blue-900">
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">Customer-Centric</h3>
+            <p className="text-gray-600 dark:text-gray-300">
               Our customers come first. We strive to offer a seamless shopping experience, excellent customer service, and personalized recommendations.
             </p>
           </div>
@@ -126,7 +126,7 @@ const About = () => {
       </section>
 
       {/* Join Our Journey Section */}
-      <section className="bg-gray-800 text-white py-16 text-center rounded-lg shadow-lg">
+      <section className="bg-gray-800 dark:bg-gray-900 text-white py-16 text-center rounded-lg shadow-lg">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-semibold mb-4">Join Us On Our Journey</h2>
           <p className="text-lg mb-8">
