@@ -27,6 +27,11 @@ function NavigationBar() {
     };
   }, []);
 
+  // Function to close the mobile menu when a link is clicked
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div className="bg-transparent fixed w-full z-50 top-0 left-0 mt-4 rounded-b-3xl transform -translate-y-1/2 backdrop-blur-lg">
       <nav className="container mx-auto flex items-center justify-between py-4 px-6">
@@ -51,7 +56,11 @@ function NavigationBar() {
             isMobileMenuOpen ? 'flex' : 'hidden'
           } lg:flex lg:items-center lg:space-x-10 flex-col lg:flex-row absolute lg:static top-16 left-0 w-full lg:w-auto bg-white dark:bg-gray-800 lg:bg-transparent shadow-lg lg:shadow-none z-40`}
         >
-          <Link to="/" className="text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4">
+          <Link
+            to="/"
+            className="text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4"
+            onClick={closeMobileMenu}
+          >
             HOME
           </Link>
 
@@ -65,16 +74,32 @@ function NavigationBar() {
             </button>
             {isCatalogOpen && (
               <div className="absolute bg-white dark:bg-gray-800 text-gray-800 dark:text-white py-2 w-56 shadow-lg rounded-md mt-2 z-50 border border-gray-100">
-                <Link to="/catalog/dresses" className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300">
+                <Link
+                  to="/catalog/dresses"
+                  className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300"
+                  onClick={closeMobileMenu}
+                >
                   Dresses
                 </Link>
-                <Link to="/catalog/pants" className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300">
+                <Link
+                  to="/catalog/pants"
+                  className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300"
+                  onClick={closeMobileMenu}
+                >
                   Pants
                 </Link>
-                <Link to="/catalog/shirts" className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300">
+                <Link
+                  to="/catalog/shirts"
+                  className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300"
+                  onClick={closeMobileMenu}
+                >
                   Shirts
                 </Link>
-                <Link to="/catalog/jackets" className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300">
+                <Link
+                  to="/catalog/jackets"
+                  className="block px-6 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-all duration-300"
+                  onClick={closeMobileMenu}
+                >
                   Jackets
                 </Link>
               </div>
@@ -82,7 +107,11 @@ function NavigationBar() {
           </div>
 
           {/* Cart and Wishlist Icons */}
-          <Link to="/wishlist" className="relative text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4">
+          <Link
+            to="/wishlist"
+            className="relative text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4"
+            onClick={closeMobileMenu}
+          >
             Wishlist
             {wishlistCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center">
@@ -90,7 +119,11 @@ function NavigationBar() {
               </span>
             )}
           </Link>
-          <Link to="/cart" className="relative text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4">
+          <Link
+            to="/cart"
+            className="relative text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4"
+            onClick={closeMobileMenu}
+          >
             Cart
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center">
@@ -98,10 +131,18 @@ function NavigationBar() {
               </span>
             )}
           </Link>
-          <Link to="/about" className="text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4">
+          <Link
+            to="/about"
+            className="text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4"
+            onClick={closeMobileMenu}
+          >
             AboutUs
           </Link>
-          <Link to="/contact" className="text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4">
+          <Link
+            to="/contact"
+            className="text-lg text-black dark:text-white hover:text-gray-300 transition-colors duration-300 py-2 px-4"
+            onClick={closeMobileMenu}
+          >
             Contact
           </Link>
         </div>
